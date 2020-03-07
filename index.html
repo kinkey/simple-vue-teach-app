@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+
+<div id="app">
+    {{merdenea}}
+    <br>
+    <input v-model="merdenea.numeMerdenea">
+    <br>
+    <button v-on:click="addMerdenea()">
+        Add merdenea</button>
+    <br>
+    {{merdenele}}
+
+    <merdenea-component
+            v-for="vinDiesel in merdenele"
+    v-bind:viorica-de-la-clejani="vinDiesel"></merdenea-component>
+
+
+
+
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>

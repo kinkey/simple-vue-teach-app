@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cumparaturi</title>
+</head>
+<body>
+
+<div id="cumparaturi">
+    {{brandNou}} <br>
+    {{marciDeProdus}}
+    <br>
+    Add Brand : <input placeholder="Brand Nou" v-model="brandNou">
+    <button v-on:click="addBrand">Adauga Brand</button><br>
+    <input placeholder="Nume Produs" v-model="shopItem.nume">
+    <input placeholder="Cantitate" v-model="shopItem.cantitate">
+    <select v-model="shopItem.marca">
+        <option v-for="marca in marciDeProdus" v-bind:value="marca">
+            {{ marca }}
+        </option>
+    </select>
+    <br>
+    <button v-on:click="addProdus">Adauga produs</button>
+    <br>
+    </shop-item>
+    <table border="1">
+        <tr>
+            <th>Produs</th>
+            <th>Cantitate</th>
+            <th>Marca</th>
+            <th>Delete?</th>
+        </tr>
+        <tr is="shop-item" v-for="item in items"
+            v-bind:item-property="item"
+            v-on:remove="removeItem(item)"></tr>
+    </table>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="cumparaturi.js"></script>
+</html>
